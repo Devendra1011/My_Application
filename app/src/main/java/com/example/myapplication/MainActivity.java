@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     EditText editText;
     Button button;
-    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,18 +33,15 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
         editText  = findViewById(R.id.editText);
         button = findViewById(R.id.button);
-        imageView = findViewById(R.id.imageView);
-        imageView.setImageResource(R.drawable.ic_launcher_background);
-        String inputText = editText.getText().toString();
-        textView.setText(inputText);
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // textView.setText(inputText);
-                Toast.makeText(MainActivity.this,"You CLicked the Button",Toast.LENGTH_SHORT).show();
+                String inputName = editText.getText().toString();
+                Toast.makeText(MainActivity.this,"Welcome "+inputName+" to Our App",Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
     }
 }
